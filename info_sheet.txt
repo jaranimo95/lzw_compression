@@ -6,35 +6,26 @@ You must submit an information sheet with every assignment.  Also be sure
 to submit all materials following the procedures described on the
 submission procedures page.
 
-Name:  
+Name: Christian Jarani
 
-Lecture section:  
+Lecture section: MW 9:30 am
 
-Recitation day and time:  
+Recitation day and time: Friday 3:00 pm
 
-Assignment #:  
+Assignment #: 2
 
-Program due date:  
+Program due date: 2/26/17
 
-Handed in date:  
+Handed in date: 2/26/17
 
 Source code file name(s):
 
-
-
-
-
-
+MyLZW.java
+(all the other files included w the base project).java lol
 
 Other file name(s) (if relevant):
 
-
-
-
-
-
-
-Does your program run without error?:
+Does your program run without error?: Yes
 
 If not, what is/are the error(s) and which parts of your program run
 correctly?:
