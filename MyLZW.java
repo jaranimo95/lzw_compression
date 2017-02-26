@@ -156,7 +156,7 @@ public class MyLZW {
         BinaryStdOut.close();
     }
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) {
         	 if (args[0].equals("-")) {
         	 	char mode = args[1].charAt(0);
         	 	String validOptions = "nrm";
