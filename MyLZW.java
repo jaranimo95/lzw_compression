@@ -1,21 +1,3 @@
-/*************************************************************************
- *  Compilation:  javac LZW.java
- *  Execution:    java LZW - < input.txt   (compress)
- *  Execution:    java LZW + < input.txt   (expand)
- *  Dependencies: BinaryIn.java BinaryOut.java
- *
- *  Compress or expand binary input from standard input using LZW.
- *
- *  WARNING: STARTING WITH ORACLE JAVA 6, UPDATE 7 the SUBSTRING
- *  METHOD TAKES TIME AND SPACE LINEAR IN THE SIZE OF THE EXTRACTED
- *  SUBSTRING (INSTEAD OF CONSTANT SPACE AND TIME AS IN EARLIER
- *  IMPLEMENTATIONS).
- *
- *  See <a href = "http://java-performance.info/changes-to-string-java-1-7-0_06/">this article</a>
- *  for more details.
- *
- *************************************************************************/
-
 // Replace substring with a method using 2 indices & a char array (one indice represents beginning of new substring, the other for the end, with char array containing the data between them)
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -65,33 +47,34 @@ public class MyLZW {
             if ( t < input.length() && code >= L && W < 16 )			// If codebook is full (max # of codewords) and width is less than 16 (RESIZE)
          		L = (int) Math.pow(2,++W);								// Increase codeword width and max amount of codewords         	
 
-           // Monitor Mode ON: If ratio of compression ratios exceeds the predetermined threshold	
-         	if ( monitorFlag && ( ratioOld / ratioCurr ) >= comprThreshold ) {
-            	st = new TST<Integer>();			// Reset codebook
-	        		for (int i = 0; i < R; i++)
-	            		st.put("" + (char) i, i);
-	         		W = 9;							// Set codeword width back to initial state of 9 bits
-	         		L = 512;						// Set max number of codewords to 2^W = 2^9 = 512
-	         		code = R+1;						// Set code back to R+1
-	         		monitorFlag = false;			// Monitor Mode: OFF					
-            }
-
-           // If maximum codewords / codeword width reached and Monitor Mode: OFF
-			if ( !monitorFlag && code >= L && W == 16 ) {        	   
-         	   // Reset Mode Selected: Reset codebook with initial contents (0->255 (0->R-1) used)
-	         	if (mode == 'r'){	
-	         		st = new TST<Integer>();
-	        		for (int i = 0; i < R; i++)
-	            		st.put("" + (char) i, i);
-	         		W = 9;								// Set codeword width back to initial state of 9 bits
-	         		L = 512;							// Set max number of codewords to 2^W = 2^9 = 512
-	         		code = R+1;							// Set code back to R+1
-         		}
-         	   // Monitor Mode Selected: Save current compression ratio to begin monitoring ratio of compression ratios
-         		else if ( mode == 'm' ) {
-         			ratioOld = ratioCurr;
-         			monitorFlag = true;		// Monitor Mode: ON
-         		}
+           // If maximum codewords / codeword width reached
+			if ( code >= L && W == 16 ) {        	   
+	         	if ( !monitorFlag ) {	// If Monitor Mode: OFF
+	         	   // Reset Mode Selected: Reset codebook with initial contents (0->255 (0->R-1) used)
+		         	if (mode == 'r'){	
+		         		st = new TST<Integer>();
+		        		for (int i = 0; i < R; i++)
+		            		st.put("" + (char) i, i);
+		         		W = 9;								// Set codeword width back to initial state of 9 bits
+		         		L = 512;							// Set max number of codewords to 2^W = 2^9 = 512
+		         		code = R+1;							// Set code back to R+1
+	         		}
+	         	   // Monitor Mode Selected: Save current compression ratio to begin monitoring ratio of compression ratios
+	         		else if ( mode == 'm' ) {
+	         			ratioOld = ratioCurr;
+	         			monitorFlag = true;	// Monitor Mode: ON
+	         		}	
+	         	} else { // Else Monitor Mode: ON	
+	         		if ( ( ratioOld / ratioCurr ) >= comprThreshold ) {
+            			st = new TST<Integer>();		// Reset codebook
+		        		for (int i = 0; i < R; i++)
+		            		st.put("" + (char) i, i);
+		         		W = 9;							// Set codeword width back to initial state of 9 bits
+		         		L = 512;						// Set max number of codewords to 2^W = 2^9 = 512
+		         		code = R+1;						// Set code back to R+1
+		         		monitorFlag = false;			// Monitor Mode: OFF					
+            		}
+	         	}
          	}
 
             if ( t < input.length() && code < L )					// If prefix is shorter than input and still space for more codewords
@@ -136,10 +119,39 @@ public class MyLZW {
 
         	ratioCurr = (double) expanded / (double) readIn;
 
-        	if (code >= L && W < 16)
-        		L = (int) Math.pow(2,++W);
+        	if (code >= L && W < 16) 			// If codebook is full (max # of codewords) and width is less than 16 (RESIZE)
+        		L = (int) Math.pow(2,++W);		// Increase codeword width and max amount of codewords
 
-        	if ( monitorFlag && ( ratioOld / ratioCurr ) >= comprThreshold )
+        	// If maximum codewords / codeword width reached
+			if ( code >= L && W == 16 ) {        	   
+	         	if ( !monitorFlag ) {	// If Monitor Mode: OFF
+	         	   // Reset Mode Selected: Reset codebook with initial contents (0->255 (0->R-1) used)
+		         	if (mode == 'r'){	
+		         		st = new String[(int) Math.pow(2,16)];			// Reset codebook
+		        		for (int i = 0; i < R; i++)
+		            		st[i] = "" + (char) i;
+		         		W = 9;							// Set codeword width back to initial state of 9 bits
+		         		L = 512;						// Set max number of codewords to 2^W = 2^9 = 512
+		         		code = R+1;						// Set code back to R+1
+		         		monitorFlag = false;			// Monitor Mode: OFF
+	         		}
+	         	   // Monitor Mode Selected: Save current compression ratio to begin monitoring ratio of compression ratios
+	         		else if ( mode == 'm' ) {
+	         			ratioOld = ratioCurr;
+	         			monitorFlag = true;	// Monitor Mode: ON
+	         		}	
+	         	} else { // Else Monitor Mode: ON	
+	         		if ( ( ratioOld / ratioCurr ) >= comprThreshold ) {
+            			st = new String[(int) Math.pow(2,16)];			// Reset codebook
+		        		for (int i = 0; i < R; i++)
+		            		st[i] = "" + (char) i;
+		         		W = 9;							// Set codeword width back to initial state of 9 bits
+		         		L = 512;						// Set max number of codewords to 2^W = 2^9 = 512
+		         		code = R+1;						// Set code back to R+1
+		         		monitorFlag = false;			// Monitor Mode: OFF					
+            		}
+	         	}
+         	}
 
             BinaryStdOut.write(val);
             codeword = BinaryStdIn.readInt(W);
