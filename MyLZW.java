@@ -1,8 +1,3 @@
-// Replace substring with a method using 2 indices & a char array (one indice represents beginning of new substring, the other for the end, with char array containing the data between them)
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.File;
-
 public class MyLZW {
 
    // Globals	
@@ -11,13 +6,10 @@ public class MyLZW {
     private static 		 int L = 512;        // number of codewords = 2^W
     private static 		 int W = 9;          // codeword width
 
-    public static void compress(char mode) throws FileNotFoundException{
+    public static void compress(char mode) {
 
-    	BinaryStdOut.write(mode);	// Write mode character to file for use in expand()
-    	
-    	//PrintWriter pw = new PrintWriter(new File("output.txt"));
-
-        String input = BinaryStdIn.readString();	  // reads in filename to compress
+    	BinaryStdOut.write(mode);					  // Write mode character to file for use in expand()
+    	String input = BinaryStdIn.readString();	  // reads in filename to compress
         TST<Integer> st = new TST<Integer>();			 
         for (int i = 0; i < R; i++)
             st.put("" + (char) i, i);				  // Populates codebook with keys all 8-bit extended ASCII values (0-255)
@@ -80,11 +72,8 @@ public class MyLZW {
             if ( t < input.length() && code < L )					// If prefix is shorter than input and still space for more codewords
                 st.put(input.substring(0, t + 1), code++);			// Add prefix to symbol table.
         
-         	//pw.write(st.get(prefix)+", "+prefix+", "+code);
-         	//pw.println();
-            input = input.substring(t);            // Scan past s in input.        
+         	input = input.substring(t);            // Scan past s in input.        
         }
-        //pw.close();
         BinaryStdOut.write(R,W);
         BinaryStdOut.close();
     } 
