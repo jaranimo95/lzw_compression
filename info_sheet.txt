@@ -23,7 +23,7 @@ Source code file name(s):
 MyLZW.java
 (all the other files included w the base project).java lol
 
-Other file name(s) (if relevant):
+Other file name(s) (if relevant): N/A
 
 Does your program run without error?: Yes
 

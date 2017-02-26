@@ -1,1 +1,304 @@
-::MyLZW Results::
+::Results::
+
+LZW.java
+
+  1. all.tar
+     >   Original: 2,960 kb
+     > Compressed: 1,804 kb
+     >      Ratio: 1.6408
+  2. assig2.doc
+     >   Original: 85 kb
+     > Compressed: 73 kb
+     >      Ratio: 1.1644
+  3. bmps.tar
+     >   Original: 1,080 kb
+     > Compressed:   904 kb
+     >      Ratio: 1.1947
+  4. code.txt
+     >   Original: 71 kb
+     > Compressed: 31 kb
+     >      Ratio: 2.2903
+  5. code2.txt
+     >   Original: 57 kb
+     > Compressed: 24 kb
+     >      Ratio: 2.3750
+  6. edit.exe
+     >   Original: 231 kb
+     > Compressed: 245 kb
+     >      Ratio: 0.9429
+  7. frosty.jpg
+     >   Original: 124 kb
+     > Compressed: 174 kb
+     >      Ratio: 0.7126
+  8. gone_fishing.bmp
+     >   Original: 17 kb
+     > Compressed: 10 kb
+     >      Ratio: 1.7000
+  9. large.txt
+     >   Original: 287 kb
+     > Compressed: 143 kb
+     >      Ratio: 2.0070
+ 10. Lego-big.gif
+     >   Original: 92 kb
+     > Compressed: 126 kb
+     >      Ratio: 0.7302
+ 11. medium.txt
+     >   Original: 25 kb
+     > Compressed: 13 kb
+     >      Ratio: 1.9231
+ 12. texts.tar
+     >   Original: 1,350 kb
+     > Compressed:   989 kb
+     >      Ratio: 1.3650
+ 13. wacky.bmp
+     >   Original: 901 kb
+     > Compressed:   5 kb
+     >      Ratio: 180.20
+ 14. winnt256.bmp
+     >   Original: 154 kb
+     > Compressed: 156 kb
+     >      Ratio: 0.9872
+
+-------------------------------
+
+MyLZW.java (Do Nothing)
+
+  1. all.tar
+     >   Original: 2,960 kb
+     > Compressed: 1,751 kb
+     >      Ratio: 1.6905
+  2. assig2.doc
+     >   Original: 85 kb
+     > Compressed: 40 kb
+     >      Ratio: 2.1250
+  3. bmps.tar
+     >   Original: 1,080 kb
+     > Compressed:    80 kb
+     >      Ratio: 13.500
+  4. code.txt
+     >   Original: 71 kb
+     > Compressed: 24 kb
+     >      Ratio: 2.9583
+  5. code2.txt
+     >   Original: 57 kb
+     > Compressed: 21 kb
+     >      Ratio: 2.7143
+  6. edit.exe
+     >   Original: 231 kb
+     > Compressed: 153 kb
+     >      Ratio: 1.5098
+  7. frosty.jpg
+     >   Original: 124 kb
+     > Compressed: 160 kb
+     >      Ratio: 0.7750
+  8. gone_fishing.bmp
+     >   Original: 17 kb
+     > Compressed:  9 kb
+     >      Ratio: 1.8889
+  9. large.txt
+     >   Original: 287 kb
+     > Compressed: 123 kb
+     >      Ratio: 2.3333
+ 10. Lego-big.gif
+     >   Original:  92 kb
+     > Compressed: 120 kb
+     >      Ratio: 0.7667
+ 11. medium.txt
+     >   Original: 25 kb
+     > Compressed: 13 kb
+     >      Ratio: 1.9231
+ 12. texts.tar
+     >   Original: 1,350 kb
+     > Compressed:   584 kb
+     >      Ratio: 2.3116
+ 13. wacky.bmp
+     >   Original: 901 kb
+     > Compressed:   4 kb
+     >      Ratio: 225.25
+ 14. winnt256.bmp
+     >   Original: 154 kb
+     > Compressed:  62 kb
+     >      Ratio: 2.4839
+
+-------------------------------
+
+MyLZW.java (Reset)
+  1. all.tar
+     >   Original: 2,960 kb
+     > Compressed: 1,151 kb
+     >      Ratio: 2.5717
+  2. assig2.doc
+     >   Original: 85 kb
+     > Compressed: 40 kb
+     >      Ratio: 2.1250
+  3. bmps.tar
+     >   Original: 1,080 kb
+     > Compressed:    80 kb
+     >      Ratio: 13.500
+  4. code.txt
+     >   Original: 71 kb
+     > Compressed: 24 kb
+     >      Ratio: 2.9583
+  5. code2.txt
+     >   Original: 57 kb
+     > Compressed: 21 kb
+     >      Ratio: 2.4286
+  6. edit.exe
+     >   Original: 231 kb
+     > Compressed: 149 kb
+     >      Ratio: 1.5503
+  7. frosty.jpg
+     >   Original: 124 kb
+     > Compressed: 168 kb
+     >      Ratio: 0.7381
+  8. gone_fishing.bmp
+     >   Original: 17 kb
+     > Compressed:  9 kb
+     >      Ratio: 1.8889
+  9. large.txt
+     >   Original: 287 kb
+     > Compressed: 124 kb
+     >      Ratio: 2.3145
+ 10. Lego-big.gif
+     >   Original:  92 kb
+     > Compressed: 120 kb
+     >      Ratio: 0.7667
+ 11. medium.txt
+     >   Original: 25 kb
+     > Compressed: 13 kb
+     >      Ratio: 1.9231
+ 12. texts.tar
+     >   Original: 1,350 kb
+     > Compressed:   557 kb
+     >      Ratio: 2.4270
+ 13. wacky.bmp
+     >   Original: 901 kb
+     > Compressed:   4 kb
+     >      Ratio: 225.25
+ 14. winnt256.bmp
+     >   Original: 154 kb
+     > Compressed:  32 kb
+     >      Ratio: 4.8125
+
+-------------------------------
+
+MyLZW.java (Monitor)
+ 
+  1. all.tar
+     >   Original: 2,960 kb
+     > Compressed: 1,778 kb
+     >      Ratio: 1.6648
+  2. assig2.doc
+     >   Original: 85 kb
+     > Compressed: 40 kb
+     >      Ratio: 2.125
+  3. bmps.tar
+     >   Original: 1,080 kb
+     > Compressed:    80 kb
+     >      Ratio: 13.500
+  4. code.txt
+     >   Original: 71 kb
+     > Compressed: 24 kb
+     >      Ratio: 2.9583
+  5. code2.txt
+     >   Original: 57 kb
+     > Compressed: 21 kb
+     >      Ratio: 2.4286
+  6. edit.exe
+     >   Original: 231 kb
+     > Compressed: 153 kb
+     >      Ratio: 1.5098
+  7. frosty.jpg
+     >   Original: 124 kb
+     > Compressed: 160 kb
+     >      Ratio: 0.7750
+  8. gone_fishing.bmp
+     >   Original: 17 kb
+     > Compressed:  9 kb
+     >      Ratio: 1.8889
+  9. large.txt
+     >   Original: 287 kb
+     > Compressed: 123 kb
+     >      Ratio: 2.3333
+ 10. Lego-big.gif
+     >   Original:  92 kb
+     > Compressed: 120 lb
+     >      Ratio: 0.7667
+ 11. medium.txt
+     >   Original: 25 kb
+     > Compressed: 13 kb
+     >      Ratio: 1.9231
+ 12. texts.tar
+     >   Original: 1,350 kb
+     > Compressed:   584 kb
+     >      Ratio: 2.3116
+ 13. wacky.bmp
+     >   Original: 901 kb
+     > Compressed:   4 kb
+     >      Ratio: 225.25
+ 14. winnt256.bmp
+     >   Original: 154 kb
+     > Compressed:  62 kb
+     >      Ratio: 2.4839
+
+-------------------------------
+
+7zip
+  1. all.tar
+     >   Original: 2,960 kb
+     > Compressed:   809 kb
+     >      Ratio: 3.6588
+  2. assig2.doc
+     >   Original: 85 kb
+     > Compressed: 21 kb
+     >      Ratio: 4.0476
+  3. bmps.tar
+     >   Original: 1,080 kb
+     > Compressed:    53 kb
+     >      Ratio: 20.3774
+  4. code.txt
+     >   Original: 71 kb
+     > Compressed: 14 kb
+     >      Ratio: 5.0714
+  5. code2.txt
+     >   Original: 57 kb
+     > Compressed: 13 kb
+     >      Ratio: 4.3846
+  6. edit.exe
+     >   Original: 231 kb
+     > Compressed:  97 kb
+     >      Ratio: 2.3814
+  7. frosty.jpg
+     >   Original: 124 kb
+     > Compressed: 125 kb
+     >      Ratio: 0.9920
+  8. gone_fishing.bmp
+     >   Original: 17 kb
+     > Compressed:  8 kb
+     >      Ratio: 2.1250
+  9. large.txt
+     >   Original: 287 kb
+     > Compressed: 103 kb
+     >      Ratio: 2.7864
+ 10. Lego-big.gif
+     >   Original: 92 kb
+     > Compressed: 91 kb
+     >      Ratio: 1.0110
+ 11. medium.txt
+     >   Original: 25 kb
+     > Compressed: 11 kb
+     >      Ratio: 2.2727
+ 12. texts.tar
+     >   Original: 1,350 kb
+     > Compressed:   427 kb
+     >      Ratio: 3.1616
+ 13. wacky.bmp
+     >   Original: 901 kb
+     > Compressed:   3 kb
+     >      Ratio: 300.33
+ 14. winnt256.bmp
+     >   Original: 154 kb
+     > Compressed:  43 kb
+     >      Ratio: 3.5814
+
+-------------------------------
